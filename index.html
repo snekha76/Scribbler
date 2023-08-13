@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>ScriBBler</title>
+    <!-- TODO: Include Font Awesome file here -->
+    <!-- TODO: Include Google Fonts file here -->
+    <link href="https://fonts.googleapis.com/css?family=Montez&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/ScriBBler.css">
+    
+</head>
+
+<body>
+    <!-- TODO: Include all your code for the header and home page here -->
+    <div class="navbar">
+        <div class="company-info">
+            <h1>ScriBBler</h1>
+            <p>Explore, Imagine, Create</p>
+        </div>
+        <div class="auth-buttons">
+            <button class="auth-button" onclick="openModal()">Sign Up</button>
+            <button class="auth-button" onclick="openLoginModal()">Sign In</button>
+        </div>
+    </div>
+
+    <div id="feeds">
+        <button class="feed-btn"><a href="/postslist.html">All Posts</a></button>
+        <button class="feed-btn" onclick="openCreatePostModal()">  Create Posts </button>
+    </div>
+
+    <!-- MOdel-->
+    <div id="signupModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Sign Up</h2>
+            <input class="modal-input" type="text" placeholder="Enter your name" required="">
+            <input class="modal-input" type="text" placeholder="Enter your username" required="">
+            <input class="modal-input" type="password" placeholder="Enter your password" required="">
+            <input class="modal-input" type="password" placeholder="Re-enter your password" required="">
+            <span id="errorMessage" class="error-message"></span>
+            <button class="full-block-button" onclick="validateSignUp()">Sign Up</button>
+        </div>
+    </div>
+
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeLoginModal()">&times;</span>
+            <h2>Welcome Back!</h2>
+            <input class="modal-input" type="text" placeholder="Enter your username" id="usernameLoginInput" required="">
+            <input class="modal-input" type="password" placeholder="Enter your password" id="passwordLoginInput" required="">
+            <span id="loginErrorMessage" class="error-message"></span>
+            <button class="full-block-button" onclick="validateSignIn()">Sign In</button>
+        </div>
+    </div>
+
+    <div id="createPostModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeCreatePostModal()">&times;</span>
+            <h2 class="modal-title">Pen Your Post</h2>
+            <label for="postTitle">Title</label>
+            <input type="text" id="postTitle" class="modal-input" placeholder="Enter title of your post">
+            <label for="postContents">Comments</label>
+            <textarea id="postContents" class="modal-textarea" placeholder="Enter the contents of your post"></textarea>
+            <button class="create-btn" onclick="createPost()">Create</button>
+        </div>
+    </div>
+
+    <Script src="/ScriBBler.js"></Script>
+</body>
+
+</html>
